@@ -1,14 +1,46 @@
 /*
-	We have already define some elements for you here.
-	Now it's' up to you to make your website fabulous :-)
+	This is a CSS comment and will not be shown on your website.
+	Comments are great for dividing sections of your html
 	
-	ps. this is a CSS comment and will not be shown on your website
+	We have already define some elements for you here.
+	Now it's' up to you to make your website fabulous :-) 
 */
 
-.header {
-	
+body {
+	background-color: #F0F0F0;
 }
 
-.menu {
-	
+/* --- HEADER --- */
+.header {
+	font-family: 'Amatic SC', cursive;
+	color: #ffffff;
+	padding: 80px 20px 80px 20px;
+	background: #0D2B45 url('images/background-03.jpg') top center no-repeat;
 }
+
+.header h1 {
+	font-weight: normal;
+    font-size: 80px;
+	margin: 0;	
+}
+
+.header p {
+	font-weight: 700;
+	font-size: 30px;
+	margin:0;
+}
+
+
+/* --- CONTAINER --- */
+
+
+
+/* --- MENU --- */
+
+
+
+/* --- CONTENT --- */
+
+
+
+/* --- FOOTER --- */

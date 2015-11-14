@@ -1,14 +1,93 @@
 /*
-	We have already define some elements for you here.
-	Now it's' up to you to make your website fabulous :-)
+	This is a CSS comment and will not be shown on your website.
+	Comments are great for dividing sections of your html
 	
-	ps. this is a CSS comment and will not be shown on your website.
+	We have already define some elements for you here.
+	Now it's' up to you to make your website fabulous :-) 
 */
 
-.header {
-	
+body {
+	background-color: #F0F0F0;
 }
 
+/* --- HEADER --- */
+.header {
+	font-family: 'Amatic SC', cursive;
+	padding: 80px 20px 80px 20px;
+	text-align: center;
+	color: #ffffff;
+	background: #0D2B45 url('images/background-02.jpg') top center no-repeat;
+}
+
+.header h1 {
+	font-weight: normal;
+    font-size: 80px;
+	margin: 0;	
+}
+
+.header p {
+	font-weight: 700;
+	font-size: 30px;
+	margin:0;
+}
+
+
+/* --- CONTAINER --- */
+.container {
+	width: 800px;
+	background-color: white;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+
+
+/* --- MENU --- */
 .menu {
-	
+	padding: 30px;
+	background-color: #BCE8CF;
+}
+
+.menu a:link, .menu a:visited {
+	color:#0C2742;
+	margin-right: 25px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.menu a:hover, .menu a:active {
+	color: coral;
+}
+
+/* --- CONTENT --- */
+.content{
+	padding: 30px;
+    line-height: 30px;
+}
+.content .profile-picture {
+	margin: 0 20px 10px 0px;
+    border: 10px solid lightgrey;
+    border-radius: 15px;
+}
+
+
+
+/* --- FOOTER --- */
+.footer{
+	padding: 30px;
+	text-align: center;
+}
+
+.footer p {
+	font-size: 12px;
+}
+
+.footer a:link, .footer a:visited {
+	margin-right: 10px;
+	color: #666;
+}
+
+.footer a:hover, .footer a:active {
+	color: #000000;
 }
