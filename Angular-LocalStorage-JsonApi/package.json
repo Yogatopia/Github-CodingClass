@@ -1,0 +1,15 @@
+{
+  "name": "angular-localstorage",
+  "version": "1.0.0",
+  "description": "Load data from external API using Angular.js",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.4.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Armand Lacle",
+  "license": "ISC"
+}

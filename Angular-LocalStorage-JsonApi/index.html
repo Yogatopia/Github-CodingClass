@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular.js - Load data from API</title>
+    <link rel="stylesheet" href="styles/screen.css"/>
+    <style>
+        body {
+            margin: 1.5em;
+        }
+
+        h1 span img {
+            width: 50px;
+            height: 50px;
+        }
+
+        table {
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container" ng-app="myApp" ng-controller="peopleCtrl">
+
+    <h1>
+        <span>
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/angular-logo.svg" alt="Angular.js Logo"/>
+        </span>
+        Angular.js Load Data from API
+    </h1>
+
+    <div>
+        <br><br>
+        <a href="javascript:void(0);">Save State</a> | <a href="javascript:void(0);" ng-click="clearStorage();">Clear All</a>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="person in people | orderBy:'id'">
+            <td>{{person.id}} - {{person.name}}</td>
+            <td>{{person.username}}</td>
+            <td>{{person.email}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
