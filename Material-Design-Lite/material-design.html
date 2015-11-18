@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content=" ">
+    <title>Angular localStorage with mdl</title>
+    <link rel="stylesheet" href="mdl/material.blue_grey-deep_orange.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="style.css"/>
+
+</head>
+<body ng-app="book">
+<div ng-controller="peopleCtrl">
+
+    <form id="newContact" ng-submit="saveData()">
+
+        <div class="mdl-textfield mdl-textfield--floating-label">
+            <label for="name" class="mdl-textfield__label">Name:</label>
+            <input type="text" ng-model="person.name" id="name" class="mdl-textfield__input" autocomplete="off" autofocus="" placeholder="" value="John Doe">
+        </div>
+
+        <div class="mdl-textfield mdl-textfield--floating-label">
+            <label for="email" class="mdl-textfield__label">Email:</label>
+            <input type="email" ng-model="person.email" id="email" class="mdl-textfield__input" value="john.doe.com" placeholder="" />
+        </div>
+
+        <div class="mdl-textfield mdl-textfield--floating-label">
+            <label for="tel" class="mdl-textfield__label">Phone:</label>
+            <input type="tel" ng-model="person.tel" id="tel" value="555-12345" class="mdl-textfield__input">
+        </div>
+
+        <input type="submit" value="Save" class="mdl-button mdl-button--accent">
+    </form>
+
+    <button id="clear" ng-click="clearStorage()" class="mdl-button mdl-button--raised mdl-button--accent">Clear all
+    </button>
+
+
+    <div ng-repeat="person in people track by $index" class="mdl-card mdl-shadow--2dp" id="card{{$index}}">
+        <div class="mdl-card__title mdl-color--blue-grey-500" ng-click="showCard($index)">
+            <h2 class="mdl-card__title-text">{{person.name}}</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            <div>
+                Phone: {{person.tel}}
+            </div>
+            <div>
+                Email: {{person.email}}
+            </div>
+        </div>
+
+        <div class="mdl-card__menu" id="card-menu{{$index}}">
+            <button class="mdl-button mdl-button--icon "><i ng-click="editItem($index)" class="material-icons">edit</i>
+            </button>
+            <button class="mdl-button mdl-button--icon "><i ng-click="removeItem($index)" class="material-icons ">delete</i></button>
+        </div>
+
+    </div><!-- end ng-repeat  -->
+</div><!-- end ng-controller -->
+
+
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="mdl/material.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

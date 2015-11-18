@@ -1,0 +1,32 @@
+.mdl-card__title{
+    color: #fff;
+}
+.mdl-card__menu{
+    color: #fff;
+}
+.mdl-card {
+    display: block;
+    height: 60px;
+    min-height: 60px;
+    margin-bottom: 1px;
+    transition:0.4s;
+    width:auto;
+}
+#clear{
+    display: block;
+}
+/*  Material design Lite: http://www.getmdl.io/components/index.html */
+.select-card{
+    height: 190px;
+    min-height: 60px;
+    margin: 4px auto;
+}
+.select-card .select-card-menu{
+    visibility:visible;
+    opacity:1;
+}
+.mdl-card__menu{
+    visibility: hidden;
+    opacity: 0;
+    transition:0.4s;
+}
