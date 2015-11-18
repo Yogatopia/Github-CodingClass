@@ -32,6 +32,10 @@ myApp.controller("peopleCtrl", function ($scope, People) {
         localStorage.people = JSON.stringify($scope.people);
     };
 
+    $scope.saveState = function () {
+        localStorage.people = JSON.stringify($scope.people);
+    };
+
     $scope.clearStorage = function () {
         localStorage.removeItem("people");
         $scope.loadData();
