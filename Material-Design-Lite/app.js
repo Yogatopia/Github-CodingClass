@@ -3,12 +3,27 @@
  */
 myApp = angular.module('book', []);
 
-myApp.controller('peopleCtrl', function ($scope) {
+myApp.factory("People", function ($http) {
+    var peopleAPI = {};
+    peopleAPI.getPeople = function () {
+        return $http({
+            method: "GET",
+            url: "http://jsonplaceholder.typicode.com/users"
+        });
+    };
+    return peopleAPI;
+});
+
+myApp.controller('peopleCtrl', function ($scope, People) {
 
     $scope.saveData = function () {
         $scope.people.push(JSON.parse(JSON.stringify($scope.person)));
         localStorage.people = JSON.stringify($scope.people);
         $scope.person = {};
+    };
+
+    $scope.saveAll = function () {
+        localStorage.people = JSON.stringify($scope.people);
     };
 
     $scope.editItem = function (index) {
@@ -21,6 +36,11 @@ myApp.controller('peopleCtrl', function ($scope) {
         $scope.people = []; // Create empty array to hold contact objects
         if (localStorage.people !== undefined) {
             $scope.people = JSON.parse(localStorage.people);
+        } else {
+            People.getPeople().success(function (response) {
+                $scope.people = response;
+                $scope.saveAll();
+            });
         }
     };
 
